@@ -18,5 +18,14 @@
  (sublimetext 에디터에서 sftp패키지를 적용시켰음)
 4. sftp (ftp와 데이터 전송방식은 비슷하다 ssh를 이용하는것이 ftp와는 다른 방식인것 같다)와 가상서버내에 php를 부가 설치한다
 
+php 내에서 오류 로그가 나오게 하려면
+phpinfo.php에 접속해 display_errors가 on인지 확인을 한다 만약 off라면
+ssh클라이언트로 접속해서 cd /etc/php/현재 자신의 버전/fpm 을 창에 입력한다
+sudo vi php.ini의 내용 중 display_errors="off"를 on으로 변경한다
+원할한 진행을 위해 서버를 재시작 한다
+sudo service nginx restart
+sudo service php7.4-fpm restart
+
+
 
 
